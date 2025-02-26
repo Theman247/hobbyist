@@ -14,5 +14,19 @@
     </form>
     <form action = "Coverpg.html">
     <button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button> </form>
+    <h1>Click the Button to Run Python Script</h1>
+    <button onclick="runScript()">Run Script</button>
+    <p id="output"></p>
+
+    <script>
+        function runScript() {
+            fetch("/run-script")
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("output").innerText = data.message || data.error;
+                })
+                .catch(error => console.error("Error:", error));
+        }
+    </script>
 </body>
 </html>
