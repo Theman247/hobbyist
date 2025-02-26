@@ -18,15 +18,12 @@
     <button onclick="runScript()">Run Script</button>
     <p id="output"></p>
 
-    <script>
-        function runScript() {
-            fetch("/run-script")
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById("output").innerText = data.message || data.error;
-                })
-                .catch(error => console.error("Error:", error));
-        }
-    </script>
+<button onclick="runPython()">Run Python Script</button>
+
+<script>
+    function runPython() {
+        window.location.href = "run_script.sh";
+    }
+</script>
 </body>
 </html>
