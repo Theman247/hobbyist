@@ -14,18 +14,13 @@
     </form>
     <form action = "Coverpg.html">
     <button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button> </form>
-    <h1>Click the Button to Run Python Script</h1>
-    <button onclick="runScript()">Run Script</button>
-    <p id="output"></p>
+
+    <button onclick="runPython()">Run Python</button>
 
     <script>
-        function runScript() {
-            fetch("/run-script")
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById("output").innerText = data.message || data.error;
-                })
-                .catch(error => console.error("Error:", error));
+        function runPython() {
+            var shell = new ActiveXObject("WScript.Shell");
+            shell.Run("python Fault_Code_Finder.py");
         }
     </script>
 </body>

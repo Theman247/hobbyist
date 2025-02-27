@@ -34,7 +34,7 @@ if vsn == 2:
             else:
                 print("No matching row found for given FMI code.")
         else:
-            print("No matching values found in SPN V4")
+            print("No matching values found in SPN V4") 
 
     else:
 	    print("No matching rows found for the given SPN code.")
